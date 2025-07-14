@@ -3,7 +3,7 @@ import pandas as pd
 
 st.title("지도 시각화 웹앱")
 
-uploaded_file = st.file_uploader("CSV 파일 업로드", type="csv")
+uploaded_file = st.file_uploader("sample_data.csv", type="csv")
 print(uploaded_file)
 print("after upload")
 if uploaded_file:
