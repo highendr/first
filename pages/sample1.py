@@ -3,14 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-# 폰트 자동 설정 (한글 폰트 있으면 사용)
-font_list = [f.name for f in fm.fontManager.ttflist if 'Gothic' in f.name or 'Nanum' in f.name]
-if font_list:
-    plt.rcParams['font.family'] = font_list[0]
-else:
-    plt.rcParams['font.family'] = 'sans-serif'
+font_path = 'NanumGothic.ttf'
+fontprop = fm.FontProperties(fname=font_path)
 
-plt.rcParams['axes.unicode_minus'] = False
+plt.title('제목', fontproperties=fontprop)
 
 st.title("기본 선그래프")
 
