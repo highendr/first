@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.title("난이도 하 - 기본 선그래프")
+st.title("기본 선그래프")
 
 df = pd.read_csv("sample1.csv",encoding="euc-kr")
 st.dataframe(df)
