@@ -7,5 +7,5 @@ st.dataframe(df)
 
 fig, ax = plt.subplots()
 df.plot(x='년도', y='인구수', kind='line', ax=ax)
-plt.title('년도별 인구 변화')
+plt.title('년도별 인구수')
 st.pyplot(fig)
