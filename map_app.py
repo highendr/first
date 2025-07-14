@@ -4,8 +4,8 @@ import pandas as pd
 st.title("지도 시각화 웹앱")
 
 uploaded_file = st.file_uploader("sample_data.csv", type="csv")
-print(uploaded_file)
-print("after upload")
+st.title(uploaded_file)
+#print("after upload")
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     st.map(df)
