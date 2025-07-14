@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.title("기본 선그래프")
-
-df = pd.read_csv("sample1.csv",encoding="euc-kr")
+df = pd.read_csv("sample1.csv", encoding="euc-kr")
 st.dataframe(df)
 
 fig, ax = plt.subplots()
