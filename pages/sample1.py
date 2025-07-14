@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 st.title("난이도 하 - 기본 선그래프")
 
-df = pd.read_csv(uploaded_file)
+df = pd.read_csv("sample1.csv",encoding="euc-kr")
 st.dataframe(df)
 
 fig, ax = plt.subplots()
