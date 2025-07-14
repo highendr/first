@@ -1,10 +1,13 @@
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('sample2.csv')  # CSV: 연도별 인구수 예시
+st.title("난이도 하 - 기본 선그래프")
 
-df.plot(x='년도', y='인구수', kind='line')
+df = pd.read_csv(uploaded_file)
+st.dataframe(df)
+
+fig, ax = plt.subplots()
+df.plot(x='년도', y='인구수', kind='line', ax=ax)
 plt.title('년도별 인구 변화')
-plt.xlabel('년도')
-plt.ylabel('인구수')
-plt.show()
+st.pyplot(fig)
