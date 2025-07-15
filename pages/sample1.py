@@ -8,7 +8,7 @@ st.title("📊 년도별 인구 변화 시각화")
 df = pd.read_csv("sample1.csv", encoding='euc-kr')
 
 # 첫 번째 열 삭제
-df = df.drop(df.columns[0], axis=1)
+
 
 # 원본 데이터 출력 (인덱스 숨기기)
 st.subheader("📂 원본 데이터")
