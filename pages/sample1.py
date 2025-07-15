@@ -1,19 +1,17 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 
-font_path = 'NanumGothic.ttf'
-fontprop = fm.FontProperties(fname=font_path)
+# 타이틀
+st.title("📊 년도별 인구 변화 시각화")
 
-plt.title('제목', fontproperties=fontprop)
+# CSV 데이터 불러오기 (EUC-KR 인코딩)
+df = pd.read_csv("sample1.csv", encoding='euc-kr')
 
-st.title("기본 선그래프")
+# 원본 데이터 출력 (왼쪽 인덱스 숨기기)
+st.subheader("📂 원본 데이터")
+st.dataframe(df.style.hide(axis="index"))
 
-df = pd.read_csv("sample1.csv", encoding="euc-kr")
-st.dataframe(df.reset_index(drop=True))
-
-fig, ax = plt.subplots()
-df.plot(x='년도', y='인구수', kind='line', ax=ax)
-plt.title('년도별 인구 변화')
-st.pyplot(fig)
+# 라인 차트 그리기 (년도 x축, 인구수 y축)
+st.subheader("📈 년도별 인구 변화 라인 차트")
+chart_data = df.set_index('년도')['인구수']
+st.line_chart(chart_data)
